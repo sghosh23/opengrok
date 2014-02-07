@@ -1,0 +1,9 @@
+<li><a>Combination</a>
+ <ul>
+	<% @modem_main_combination.each do |data| %>
+	<% split_data = data.split('@') %>
+      <li style="line-height:10px; font-size:.75em;"><a href="http://107.109.3.118:8080/<%= split_data[0] %>" target="_blank">  <%= split_data[0] %> &nbsp&nbsp&nbsp&nbsp@ <i> <%= split_data[1] %></i></a></li>
+   
+    <% end %>
+ </ul>
+</li>

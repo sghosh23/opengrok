@@ -1,0 +1,157 @@
+
+<script language="javascript" type="text/javascript">setTimeout("location.reload();",1800000);</script>
+<div id="groktree" style= "padding-top:90px;"> 
+GGSM [AP]
+	<div id="selector"> 
+		<ul>
+		    <li>
+			 <a>JB MAIN</a>
+			  <ul>
+			  	
+			  	<% if !@params_jbmain_blueberry.empty? %>
+		        <%= render 'shared/jb_blueberry' %>
+		        <% end %>
+		        <% if !@params_jbmain_combination.empty? %>
+		        <%= render 'shared/jb_combination' %>
+		        <% end %>
+		        
+		        
+			  </ul>
+			</li>
+			<% if !@params_jb_prod.empty? %> 
+			 <%= render 'shared/jb_prod' %>
+		    <% end %>
+			
+			<li>
+			 <a>JBP MAIN</a>
+			  <ul>
+			  	<% if !@params_main_strawberry.empty? %>
+			  	<%= render 'shared/strawberry' %>
+			  	<% end %>
+			  	<% if !@params_main_blueberry.empty? %>
+		        <%= render 'shared/blueberry' %>
+		        <% end %>
+		        <% if !@params_main_combination.empty? %>
+		        <%= render 'shared/blueberry' %>
+		        <% end %>
+		        <% if !@params_main_islandpunch.empty? %>
+		        <%= render 'shared/blueberry' %>
+		        <% end %>
+		        <% if !@params_main_maple.empty? %>
+		        <%= render 'shared/maple' %>
+		        <% end %>
+		        
+			  </ul>
+			</li>
+		 
+		    <% if !@params_jbp_prod.empty? %> 
+			 <%= render 'shared/jbp_prod' %>
+		    <% end %>
+			<!-- kitkat configuration -->
+			<li>
+			 <a>KK MAIN</a>
+			   <ul>
+			  	<% if !@params_kk_strawberry.empty? %>
+			  	<%= render 'shared/kk_strawberry' %>
+			  	<% end %>
+			  	<% if !@params_kk_blueberry.empty? %>
+		        <%= render 'shared/kk_blueberry' %>
+		        <% end %>
+		        <% if !@params_kk_combinations.empty? %>
+		        <%= render 'shared/kk_combination' %>
+		        <% end %>
+		        <% if !@params_kk_cinnamon.empty? %>
+		        <%= render 'shared/kk_cinnamon' %>
+		        <% end %>
+		        </ul>
+			</li> 
+			
+			<% if !@params_kk_prod.empty? %> 
+			 <%= render 'shared/kk_prod' %>
+		    <% end %>
+
+
+			<% if !@params_main.empty? %>
+			<li>
+			 <a>MAIN</a>
+			  <ul>
+			    <li><a>Strawberry</a>
+			  	 <ul>
+				   <%  @params_main.each do |data| %>
+					<% split_data = data.split('@') %>
+				   <li style="line-height:10px; font-size:.75em;"><a href="http://107.109.3.118:8080/<%= split_data[0] %>" target="_blank">  <%= split_data[0] %> &nbsp&nbsp&nbsp&nbsp@ <i> <%= split_data[1] %></i></a></li>
+				   
+				   <% end %>
+			     </ul>
+				</li>
+				<li><a>Blueberry</a>
+			  	 <ul>
+				   <%  @params_main.each do |data| %>
+					<% split_data = data.split('@') %>
+				   <li style="line-height:10px; font-size:.75em;"><a href="http://107.109.3.118:8080/<%= split_data[0] %>" target="_blank">  <%= split_data[0] %> &nbsp&nbsp&nbsp&nbsp@ <i> <%= split_data[1] %></i></a></li>
+				   
+				   <% end %>
+			     </ul>
+				</li>
+			  </ul> 
+			</li> 
+			<% end %>
+	    </ul> 
+	</div>
+	<div style="padding-top:20px;"></div>
+    <STRONG>GGSM [CP]</STRONG>
+	<div id="selector_modem">
+    <ul>
+
+        <li>
+			 <a>MAIN</a>
+			  <ul>
+			  	<% if !@modem_main_blueberry.empty? %>
+			  	<%= render 'shared/mo_blueberry' %>
+			  	<% end %>
+			  	<% if !@modem_main_combination.empty? %>
+		        <%= render 'shared/mo_combination' %>
+		        <% end %>
+		        <% if !@modem_main_IceMoCha.empty? %>
+		        <%= render 'shared/mo_IceMoCha' %>
+		        <% end %>
+		        <% if !@modem_main_maple.empty? %>
+		        <%= render 'shared/mo_maple' %>
+		        <% end %>
+		        <% if !@modem_main_sangria.empty? %>
+		        <%= render 'shared/mo_sangria' %>
+		        <% end %>
+		        
+			  </ul>
+		</li>
+     <% if !@params_modem_prod.empty? %> 
+			 <%= render 'shared/modem_prod' %>
+     <% end %>
+    </ul>
+	</div>
+</div> 
+<script type="text/javascript">    
+     jQuery("#selector").jstree({ 
+        "themes" : {
+            "theme" : "classic", 
+
+            "icons" : false
+        },
+        "plugins" : [ "themes", "html_data"]
+    });
+  </script>
+
+  <script type="text/javascript">    
+     jQuery("#selector_modem").jstree({ 
+        "themes" : {
+            "theme" : "classic", 
+
+            "icons" : false
+        },
+        "plugins" : [ "themes", "html_data"]
+    });
+  </script>
+<pre>
+<%= @params_kk_strawberry %>
+</pre>
+<%= debug(params) if Rails.env.development? %>

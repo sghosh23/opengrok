@@ -1,0 +1,36 @@
+
+
+<div id="selector"> 
+	<ul> 
+		<li>
+		 <a>JBP PROD</a>
+		  <ul>
+		  	<% @params_prod.each do |pro| %>
+				<% data = pro.split('@') %>
+				<%#= data[0] %>
+				<li style="line-height:10px; font-size:.75em;"><a href="http://107.109.3.118:8080/<%= data[0] %>"><%= pro %></li>
+			<% end %>
+		  </ul>
+		</li>
+		<li>
+		 <a>JBP SUKANTA</a>
+		  <ul>
+		   <% @params_main.each do |pro| %>
+				<% data = pro.split('@') %>
+				<%#= data[0] %>
+				<li style="line-height:10px; font-size:.75em;"><a href="http://107.109.3.118:8080/<%= data[0] %>"><%= pro %></li>
+			<% end %>
+		  </ul> 
+		</li> 
+    </ul> 
+</div>
+<script type="text/javascript">    
+     jQuery("#selector").jstree({ 
+        "themes" : {
+            "theme" : "default",    
+            "icons" : false
+        },
+        "plugins" : [ "themes", "html_data"]
+    });
+  </script>
+<%= debug(params) if Rails.env.development? %>

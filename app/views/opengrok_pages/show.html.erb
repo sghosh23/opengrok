@@ -1,0 +1,48 @@
+<h1>OpengrokPages#show</h1>
+
+<div id="selector">
+   <ul>
+   	 <li><a>JBP PROD</a>
+   	 	<ul>
+	<% i = 0 %>
+	<% while i<@f.length %>
+      
+	<% my_array = IO.readlines("/home/sbrc/sukanta/opengrok/"+@f[i]) %>
+
+		
+	    
+	    <%if  my_array[0] == "JBP PROD\n" %>
+	    <%#= my_array %>
+	    
+		
+	    <li><%= my_array[1] %>@<%= my_array[4] %></li>
+	   
+	    <% end %>
+
+<%# doc.close %>
+	<% i+=1 %>
+<% end %>
+ </ul></li>
+ <li><a>JBP SUKANTA</a>
+   	 	<ul>
+	<% i = 0 %>
+	<% while i<@f.length %>
+      
+	<% my_array = IO.readlines("/home/sbrc/sukanta/opengrok/"+@f[i]) %>
+
+		
+	    
+	    <%if  my_array[0] == "JBP sukanta\n" %>
+	    <%#= my_array %>
+	    
+		
+	    <li><%= my_array[1] %>@<%= my_array[4] %></li>
+	   
+	    <% end %>
+
+<%# doc.close %>
+	<% i+=1 %>
+<% end %>
+ </ul></li>		
+</ul>
+</div>

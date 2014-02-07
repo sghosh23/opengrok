@@ -1,0 +1,8 @@
+<% if date > 1.week.ago && date != @today %>
+        <td><%= @count %></td><td><%= @data[1] %><span class="label label-default">Last <%= Date.parse(@data[2]).strftime("%A") %></span></td><td><%= date  %></td>
+        <% elsif date == @today %> 
+        <td><%= @count %></td><td><%= @data[1] %><span class="label label-info">Just Updated </span></td><td><%= date  %></td> 
+        <% else %> 
+        <td><%= @count %></td><td><%= @data[1] %></td><td><%= date
+          %></td>
+       <% end %> 

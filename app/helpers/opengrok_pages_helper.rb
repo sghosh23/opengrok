@@ -1,0 +1,2 @@
+module OpengrokPagesHelper
+end
